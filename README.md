@@ -4,7 +4,7 @@ Small code using libnitrokey API.
 
 ## Install libnitrokey
 
-https://github.com/Nitrokey/libnitrokey
+ * https://github.com/Nitrokey/libnitrokey
 
 ```
 git clone --recursive https://github.com/Nitrokey/libnitrokey.git
@@ -15,3 +15,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j2
 sudo make install
 ```
+
+## Install argon2
+
+ * https://github.com/P-H-C/phc-winner-argon2

@@ -1,7 +1,7 @@
 src = $(wildcard *.c)
 obj = $(src:.c=.o)
 
-LDFLAGS = -lnitrokey -lm
+LDFLAGS = -lnitrokey -lm -largon2
 
 mykey: $(obj)
 	$(CC) -o $@ $^ $(LDFLAGS)

@@ -11,7 +11,7 @@
 #define SALTLEN 16
 #define SLOT_COUNT 16
 
-int main(void)
+int main(int argc, char *argv[])
 {
 	/* argon2 kdf parameters */
 	uint8_t hash1[HASHLEN];
@@ -28,7 +28,14 @@ int main(void)
 	char *slotlogin=NULL;
 	char *slotpassword=NULL;
 		
-	char userpin[]=""; // Set user pin here
+	if ( argc != 2 ) {
+		printf("USAGE: mykey [user-pin]\n");
+		exit(1);
+	}
+    
+	char userpin[10]; 
+	memset(userpin,0,10);
+	strcpy(userpin,argv[1]);
 
 	if (NK_login_auto() != 1) {
 			fprintf(stderr, "No Nitrokey found.\n");
